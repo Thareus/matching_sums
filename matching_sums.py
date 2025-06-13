@@ -1,13 +1,13 @@
 from typing import Dict, List, Set, Tuple, Union
 
-def find_matching_sums(arr: Union[List[int], Tuple[int]]) -> Dict[str, Set[Tuple[int, int]]]:
+def find_matching_sums(arr: Union[List[int], Tuple[int, ...]]) -> Dict[str, Set[Tuple[int, ...]]]:
     """
     For an unsorted list of integers, find the number of pairs of integers in the list that sum to the same values.
 
     Args:
-        arr (Union[List[int], Tuple[int]]): Input list or tuple of integers.
+        arr (Union[List[int], Tuple[int, ...]]): Input list or tuple of integers.
     Returns:
-        Dict[str, Set[Tuple[int, int]]]: Dictionary of sums and their corresponding pairs.
+        Dict[str, Set[Tuple[int, ...]]]: Dictionary of sums and their corresponding pairs.
 
     The results are sorted by key, as are the values.
     This function is compatible with inputs containing zero or negative integers.
@@ -17,7 +17,7 @@ def find_matching_sums(arr: Union[List[int], Tuple[int]]) -> Dict[str, Set[Tuple
         raise ValueError("Input must be a list or set of integers")
     
     # Find sums
-    sums: Dict[str, Set[Tuple[int, int]]] = {}
+    sums: Dict[str, Set[Tuple[int, ...]]] = {}
     for i in range(len(arr)):
         for j in range(i + 1, len(arr)):
             sum = str(arr[i] + arr[j])
