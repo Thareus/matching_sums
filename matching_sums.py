@@ -1,4 +1,5 @@
 from typing import Dict, List, Set, Tuple, Union
+import sys
 
 def find_matching_sums(arr: Union[List[int], Tuple[int, ...]]) -> Dict[str, Set[Tuple[int, ...]]]:
     """
@@ -38,6 +39,12 @@ def find_matching_sums(arr: Union[List[int], Tuple[int, ...]]) -> Dict[str, Set[
 
     # Print as per prescribed output
     for key, values in matching_sums.items():
-        print(key, ':', values)
-        # print(f"Pairs : {', '.join(str(value) for value in values)} have sum : {key}") # Join elements to precisely match the prescribed output.
+        print(f"Pairs : {' '.join(str(value) for value in values)} have sum : {key}") # Join elements to match the prescribed output.
     return matching_sums
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        arg = sys.argv[1]
+        find_matching_sums(list(map(int, arg.split(','))))
+    else:
+        print("No command line arguments provided")
