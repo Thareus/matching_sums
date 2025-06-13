@@ -3,6 +3,8 @@ Simple function to find the pairs in a sequence of integers with identical sums.
 Careful attention is paid to the ordering of the results.  
 The function is capable of accommodating zero, duplicate, and negative numbers.  
 
+Please also see the notes.md file for further breakdown of the thought process.
+
 ## Usage
 ### CLI
 May be used through a commnd line interface by calling the file with a comma-separated list of integers  
